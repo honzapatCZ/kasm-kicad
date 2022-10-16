@@ -10,7 +10,7 @@ WORKDIR $HOME
 
 RUN  add-apt-repository --yes ppa:kicad/kicad-6.0-releases \
     && apt-get update \
-    && apt install --install-recommends kicad \
+    && apt install -y --install-recommends kicad \
     && cp /usr/share/applications/org.kicad.bitmap2component.desktop $HOME/Desktop/ \
     && cp /usr/share/applications/org.kicad.eeschema.desktop $HOME/Desktop/ \
     && cp /usr/share/applications/org.kicad.gerbview.desktop $HOME/Desktop/ \
@@ -23,11 +23,11 @@ RUN  add-apt-repository --yes ppa:kicad/kicad-6.0-releases \
     && chmod +x $HOME/Desktop/org.kicad.kicad.desktop \
     && chmod +x $HOME/Desktop/org.kicad.pcbcalculator.desktop \
     && chmod +x $HOME/Desktop/org.kicad.pcbnew.desktop \
-    && chown 1000:1000 $HOME/Desktop/org.kicad.bitmap2component.desktop
-    && chown 1000:1000 $HOME/Desktop/org.kicad.eeschema.desktop
-    && chown 1000:1000 $HOME/Desktop/org.kicad.gerbview.desktop
-    && chown 1000:1000 $HOME/Desktop/org.kicad.kicad.desktop
-    && chown 1000:1000 $HOME/Desktop/org.kicad.pcbcalculator.desktop
+    && chown 1000:1000 $HOME/Desktop/org.kicad.bitmap2component.desktop \
+    && chown 1000:1000 $HOME/Desktop/org.kicad.eeschema.desktop \
+    && chown 1000:1000 $HOME/Desktop/org.kicad.gerbview.desktop \
+    && chown 1000:1000 $HOME/Desktop/org.kicad.kicad.desktop \
+    && chown 1000:1000 $HOME/Desktop/org.kicad.pcbcalculator.desktop \
     && chown 1000:1000 $HOME/Desktop/org.kicad.pcbnew.desktop
 
 
